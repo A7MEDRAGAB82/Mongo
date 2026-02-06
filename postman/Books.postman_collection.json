@@ -1,0 +1,383 @@
+{
+  "info": {
+    "_postman_id": "68898fe1-fb09-430a-8082-e0d00be3a727",
+    "name": "Books",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50360846",
+    "_collection_link": "https://go.postman.co/collection/50360846-68898fe1-fb09-430a-8082-e0d00be3a727?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "add-book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\":\"Book1\",\r\n  \"author\":\"Ali\",\r\n  \"year\":\"1937\",\r\n  \"genres\":[\"Fantasy\",\"Adventure\"]\r\n\r\n\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base}}/books/add-book",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "books",
+            "add-book"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add-books",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[{\"title\":\"Future\",\"author\":\"George Orwell\",\"year\":2020,\"genres\":[\"Science Fiction\"]},{\"title\":\"To Kill a Mockingbird\",\"author\":\"Harper Lee\" , \"year\":1960 , \"genres\":[\"Classic\",\"Fiction\"]},{\"title\":\"Brave New World\",\"author\": \"Aldous Huxley\",\"year\":2006,\"genres\":[\"Dystopian\",\"Science Fiction\"]}]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base}}/books/add-books",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "books",
+            "add-books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update-book",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\":2022\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base}}/books/update-book/Future",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "books",
+            "update-book",
+            "Future"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/search?title=Brave New World",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Brave New World"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search-books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/search-books?startYear=1990&endYear=2010",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "search-books"
+          ],
+          "query": [
+            {
+              "key": "startYear",
+              "value": "1990"
+            },
+            {
+              "key": "endYear",
+              "value": "2010"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search-genres",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/search-genres?genresData=Science Fiction",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "search-genres"
+          ],
+          "query": [
+            {
+              "key": "genresData",
+              "value": "Science Fiction"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "skip-docs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/skip-docs?skipdocs=2&limit=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "skip-docs"
+          ],
+          "query": [
+            {
+              "key": "skipdocs",
+              "value": "2"
+            },
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search-year-int",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[{\"title\":\"Future\",\"author\":\"George Orwell\",\"year\":2020,\"genres\":[\"Science Fiction\"]},{\"title\":\"To Kill a Mockingbird\",\"author\":\"Harper Lee\" , \"year\":1960 , \"genres\":[\"Classic\",\"Fiction\"]},{\"title\":\"Brave New World\",\"author\": \"Aldous Huxley\",\"year\":2006,\"genres\":[\"Dystopian\",\"Science Fiction\"]}]"
+        },
+        "url": {
+          "raw": "{{base}}/books/search-year-int",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "books",
+            "search-year-int"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search-nin-genres",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[{\"title\":\"Future\",\"author\":\"George Orwell\",\"year\":2020,\"genres\":[\"Science Fiction\"]},{\"title\":\"To Kill a Mockingbird\",\"author\":\"Harper Lee\" , \"year\":1960 , \"genres\":[\"Classic\",\"Fiction\"]},{\"title\":\"Brave New World\",\"author\": \"Aldous Huxley\",\"year\":2006,\"genres\":[\"Dystopian\",\"Science Fiction\"]}]"
+        },
+        "url": {
+          "raw": "{{base}}/books/search-nin-genres?genresData=Science Fiction&genresData=Horror",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "books",
+            "search-nin-genres"
+          ],
+          "query": [
+            {
+              "key": "genresData",
+              "value": "Science Fiction"
+            },
+            {
+              "key": "genresData",
+              "value": "Horror"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "before-year",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/before-year?year=2007",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "before-year"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "2007"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "aggregate1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/aggregate1?year=2000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "aggregate1"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "2000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "aggregate2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/aggregate2?year=2000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "aggregate2"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "2000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "aggregate3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/aggregate3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "aggregate3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "aggregate4",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/books/aggregate4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "books",
+            "aggregate4"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
